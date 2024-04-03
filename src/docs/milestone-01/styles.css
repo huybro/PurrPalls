@@ -78,3 +78,8 @@ section#team img {
     color: #666;
     margin-top: 10px;
   }
+
+  #random-cat-image img {
+    max-width: 200px; /* Adjust the value as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
