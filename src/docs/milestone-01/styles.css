@@ -1,0 +1,85 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  padding: 20px;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #333;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Header styles */
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 10px;
+}
+
+/* Aside styles */
+aside {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+aside img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Center and display group image in full */
+section#team img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Style the group members subtitle */
+  #group-members {
+    text-align: center;
+    font-style: italic;
+    font-size: small;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  #random-cat-image img {
+    max-width: 200px; /* Adjust the value as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
