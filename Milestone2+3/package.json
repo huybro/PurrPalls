@@ -1,0 +1,44 @@
+{
+  "name": "PurPals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Team_3",
+    "email": "ktle@umass.edu",
+    "url": "https://github.com/huybro/cs326.git"
+  },
+  "contributors": [
+    "Tung Thanh Nguyen, tungnguyen@umass.edu, Tung05",
+    "Huy Gia Cao, hcao@umass.edu, huybro",
+    "Khiem Le Tran, ktle@umass.edu, Khiem17204",
+    "Minh Tuan Nguyen, tuanminhnguyen3323@umass.edu, tuanminhnguyen3323"
+  ],
+  "scripts": {
+    "start": "node src/index.html",
+    "test": ""
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "bootstrap": "^5.3.3",
+    "jsonwebtoken": "^9.0.2",
+    "pouchdb": "^8.0.1"
+  },
+  "devDependencies": {
+
+  }
+}
