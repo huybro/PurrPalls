@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,8 @@
     <!-- JavaScript Files -->
     <script type="module" src="script.js" defer></script>
 </head>
+
+
 <body>
     <nav>
         <a href="#vision">Vision</a> |
@@ -23,27 +26,44 @@
     <header id="vision">
         <h1>PurrPals: A website to find friends for cats and kittens.</h1>
     </header>
+    <div id="random-cat-image">
+        
+        <button id="change-cat">Change Cat</button>
+    </div>
+    
     <section id="team">
         <h2>Team</h2>
+        <figure>
             <img src="../../../figures/grouppic.jpg" alt="Group members from left to right:" height="400" width="400">
-            <br>
-            Group members from left to right:
-            <br>
-            Khiem Le Tran:<br>-Expert in: Javascript, HTML, CSS, Github, Git version: 2.39.1. <br>-Interest: Basketball, Badminton, Anime<br>
-            Minh Tuan Nguyen:<br>-Expert in: Javascript, HTML, CSS, Github, Git version: 2.39.1.<br>-Interest: Gym, Soccer<br>
-            Huy Gia Cao:<br>-Can work with: Javascript, HTML, CSS, Github, Git version: 2.39.1.<br>-Interest: Game, Badminton<br>
-            Tung Thanh Nguyen:<br>-Can work with: Javascript, HTML, CSS, Github, Git version: 2.39.1.<br>-Interest: Badminton
+            <figcaption id="group-members">Members from left to right (Khiem, Minh, Huy, Tung)</figcaption>
+        </figure>
+        <br>
+        <strong>Khiem Le Tran</strong>:<br>- Expert in: Javascript, HTML, CSS, Github, Git version: 2.39.1. <br>-
+        Interest: Basketball, Badminton, Anime<br>
+        <strong>Minh Tuan Nguyen </strong>:<br>- Expert in: Javascript, HTML, CSS, Github, Git version: 2.39.1.<br>-
+        Interest: Gym, Alcohol<br>
+        <strong>Tung Thanh Nguyen</strong>:<br>- Can work with: Javascript, HTML, CSS, Github, Git version: 2.39.1.<br>-
+        Interest: Game, Badminton<br>
+        <strong>Huy Gia Cao</strong>:<br>- Can work with: Javascript, HTML, CSS, Github, Git version: 2.39.1.<br>-
+        Interest: Badminton
 
         </h2>
     </section>
     <h2 id="overview">Overview</h2>
-        The web application "PurrPals" aims to revolutionize the way cats socialize and find companionship in the digital age. Our project addresses the real-world need for feline companionship, particularly for cats living in urban environments where outdoor exploration may be limited.<br>
-PurrPals provides a platform for cat owners to create profiles for their pets, highlighting their personalities, preferences, and availability for playdates. Through intuitive search and matching algorithms, PurrPals helps cats find compatible friends based on factors such as age, breed, temperament, and location.<br>
-Our target audience includes cat owners looking to enrich their pets' lives by fostering meaningful social interactions, as well as individuals interested in connecting with other feline enthusiasts in their community. By facilitating friendships between cats, PurrPals promotes mental stimulation, emotional well-being, and a sense of belonging for our beloved furry companions.<br>
+    The web application "PurrPals" aims to revolutionize the way cats socialize and find companionship in the digital
+    age. Our project addresses the real-world need for feline companionship, particularly for cats living in urban
+    environments where outdoor exploration may be limited.<br>
+    PurrPals provides a platform for cat owners to create profiles for their pets, highlighting their personalities,
+    preferences, and availability for playdates. Through intuitive search and matching algorithms, PurrPals helps cats
+    find compatible friends based on factors such as age, breed, temperament, and location.<br>
+    Our target audience includes cat owners looking to enrich their pets' lives by fostering meaningful social
+    interactions, as well as individuals interested in connecting with other feline enthusiasts in their community. By
+    facilitating friendships between cats, PurrPals promotes mental stimulation, emotional well-being, and a sense of
+    belonging for our beloved furry companions.<br>
 
     <h2 id="application-parts">Application Parts</h2>
 <aside>
-<img src="../../../figures/" alt="/icons/cat-paw_gray.svg" width="40px" /> The Profile Creation Component serves as a fundamental aspect of PurrPals, allowing cat owners to create detailed profiles for their beloved pets. Users can input essential information such as their cat's name, age, breed, and personality traits. Additionally, they can upload photos and videos to showcase their cat's unique characteristics. The Profile Creation Component not only facilitates the matchmaking process but also provides a platform for cat owners to express their pets' individuality and connect with like-minded feline enthusiasts.
+<img src="/icons/cat-paw_gray.svg" alt="/icons/cat-paw_gray.svg" width="40px" /> The Profile Creation Component serves as a fundamental aspect of PurrPals, allowing cat owners to create detailed profiles for their beloved pets. Users can input essential information such as their cat's name, age, breed, and personality traits. Additionally, they can upload photos and videos to showcase their cat's unique characteristics. The Profile Creation Component not only facilitates the matchmaking process but also provides a platform for cat owners to express their pets' individuality and connect with like-minded feline enthusiasts.
 </aside>
 <br>
 <aside>
@@ -75,50 +95,109 @@ These critical components of PurrPals work synergistically to create a comprehen
 <br>
 In conclusion, the data requirements outlined above form the backbone of PurrPals, supporting its core functionalities and mission to promote feline companionship and community engagement. From cat profiles and user authentication to matching algorithms and messaging systems, each component plays a crucial role in creating a comprehensive and user-friendly platform for cat enthusiasts. By leveraging data effectively, PurrPals aims to revolutionize the way cats socialize and find companionship in the digital age, enhancing the well-being and happiness of our beloved furry friends.
 
-<h2 id="wire-frames">Wire Frames</h2>
-<aside>
-<img src="wireframe_homepage.png" alt="Wireframe of Homepage" width="200px" /> The wireframe for the Homepage serves as the entry point for users, providing a visually appealing layout that highlights key features and encourages exploration. The design includes a prominent search bar for finding cat profiles, quick access buttons to important sections such as "Matchmaking" and "Messaging," and a featured section showcasing trending cats or community announcements. By presenting a concise overview of the application's functionalities, the Homepage wireframe aims to captivate users' interest and guide them towards their desired actions.
-</aside>
-<br>
-<aside>
-<img src="wireframe_profile.png" alt="Wireframe of Profile Page" width="200px" /> The wireframe for the Profile Page focuses on presenting detailed information about individual cat profiles in a structured and visually appealing manner. It includes sections for the cat's name, age, breed, personality traits, and preferences, along with a gallery for showcasing photos and videos. Additionally, the design incorporates interactive elements such as buttons for sending messages or initiating playdates, fostering engagement between users. With a clean and intuitive layout, the Profile Page wireframe aims to provide cat owners with a comprehensive view of potential companions and facilitate meaningful connections.
-</aside>
-<br>
-<aside>
-<img src="wireframe_matchmaking.png" alt="Wireframe of Matchmaking Page" width="200px" /> The wireframe for the Matchmaking Page is designed to streamline the process of finding compatible cat companions based on user preferences and criteria. It features a user-friendly interface with filters for refining search results by factors such as age, breed, temperament, and location. The design also includes interactive elements for viewing suggested matches, exploring detailed profiles, and initiating communication. By prioritizing ease of use and customization, the Matchmaking Page wireframe aims to empower users to discover ideal playmates for their pets efficiently.
-</aside>
-<br>
-<aside>
-<img src="wireframe_messaging.png" alt="Wireframe of Messaging Page" width="200px" /> The wireframe for the Messaging Page is focused on facilitating seamless communication between cat owners, enabling them to exchange messages, share photos/videos, and coordinate playdates for their pets. The design incorporates a chat interface with threaded conversations, real-time notifications, and multimedia support, enhancing the user experience and promoting active engagement. Additionally, the wireframe includes features for organizing conversations, searching message history, and managing contacts, ensuring efficient communication management. With its intuitive layout and comprehensive functionality, the Messaging Page wireframe aims to foster connections and strengthen relationships within the PurrPals community.
-</aside>
-These wireframes are meticulously crafted to ensure a user-friendly experience and guide users through the core functionalities of the PurrPals application. From the Homepage to the Profile Page, Matchmaking Page, and Messaging Page, each wireframe is tailored to meet the needs of cat owners and enhance their interactions within the platform.
-    
-<h2 id="real-world">Real-World Connection</h2>
-<aside>
-    As the human-animal bond continues to deepen, pet ownership has become an integral part of many people's lives, offering companionship, emotional support, and a sense of belonging. However, for cat owners, finding suitable companionship for their beloved felines can often be a challenging and isolating experience. This is where PurrPals steps in to address a tangible real-world issue – the need for cats to find friends and socialize in a safe and engaging environment.
-</aside>
-<br>
-<aside>
-    Much like humans, cats thrive on social interactions and playmates, yet many owners struggle to facilitate these connections due to limited opportunities or resources. PurrPals bridges this gap by providing a dedicated platform where cat owners can connect with like-minded individuals, arrange playdates for their pets, and foster meaningful relationships within the feline community. By leveraging technology to promote socialization among cats, PurrPals aims to enhance the well-being and happiness of our furry friends while alleviating the isolation and loneliness experienced by many owners.
-</aside>
-<br>
-<aside>
-    In today's fast-paced world, where urbanization and digitalization have led to increased social fragmentation, initiatives that promote connection and community-building are more important than ever. PurrPals not only addresses the practical challenge of finding companionship for cats but also serves a deeper purpose by fostering a sense of belonging and camaraderie among pet owners. By creating a supportive online environment where cats can thrive socially, PurrPals contributes to the overall well-being of both pets and their human companions, exemplifying how technology can be harnessed to address real-world issues and enrich lives in meaningful ways.
-</aside>
-In conclusion, PurrPals embodies the intersection of technology and compassion, offering a solution to a tangible real-world issue by promoting socialization and companionship among cats. Through its innovative approach to connecting pet owners and fostering community, PurrPals strives to make a positive impact on the lives of cats and their owners, demonstrating the transformative potential of digital platforms in addressing the diverse needs of our society.
+    <h2 id="wire-frames">Wire Frames</h2>
+    <aside>
+        <img src="wireframe_homepage.png" alt="Wireframe of Homepage" width="200px" /> The wireframe for the Homepage
+        serves as the entry point for users, providing a visually appealing layout that highlights key features and
+        encourages exploration. The design includes a prominent search bar for finding cat profiles, quick access
+        buttons to important sections such as "Matchmaking" and "Messaging," and a featured section showcasing trending
+        cats or community announcements. By presenting a concise overview of the application's functionalities, the
+        Homepage wireframe aims to captivate users' interest and guide them towards their desired actions.
+    </aside>
+    <br>
+    <aside>
+        <img src="wireframe_profile.png" alt="Wireframe of Profile Page" width="200px" /> The wireframe for the Profile
+        Page focuses on presenting detailed information about individual cat profiles in a structured and visually
+        appealing manner. It includes sections for the cat's name, age, breed, personality traits, and preferences,
+        along with a gallery for showcasing photos and videos. Additionally, the design incorporates interactive
+        elements such as buttons for sending messages or initiating playdates, fostering engagement between users. With
+        a clean and intuitive layout, the Profile Page wireframe aims to provide cat owners with a comprehensive view of
+        potential companions and facilitate meaningful connections.
+    </aside>
+    <br>
+    <aside>
+        <img src="wireframe_matchmaking.png" alt="Wireframe of Matchmaking Page" width="200px" /> The wireframe for the
+        Matchmaking Page is designed to streamline the process of finding compatible cat companions based on user
+        preferences and criteria. It features a user-friendly interface with filters for refining search results by
+        factors such as age, breed, temperament, and location. The design also includes interactive elements for viewing
+        suggested matches, exploring detailed profiles, and initiating communication. By prioritizing ease of use and
+        customization, the Matchmaking Page wireframe aims to empower users to discover ideal playmates for their pets
+        efficiently.
+    </aside>
+    <br>
+    <aside>
+        <img src="wireframe_messaging.png" alt="Wireframe of Messaging Page" width="200px" /> The wireframe for the
+        Messaging Page is focused on facilitating seamless communication between cat owners, enabling them to exchange
+        messages, share photos/videos, and coordinate playdates for their pets. The design incorporates a chat interface
+        with threaded conversations, real-time notifications, and multimedia support, enhancing the user experience and
+        promoting active engagement. Additionally, the wireframe includes features for organizing conversations,
+        searching message history, and managing contacts, ensuring efficient communication management. With its
+        intuitive layout and comprehensive functionality, the Messaging Page wireframe aims to foster connections and
+        strengthen relationships within the PurrPals community.
+    </aside>
+    These wireframes are meticulously crafted to ensure a user-friendly experience and guide users through the core
+    functionalities of the PurrPals application. From the Homepage to the Profile Page, Matchmaking Page, and Messaging
+    Page, each wireframe is tailored to meet the needs of cat owners and enhance their interactions within the platform.
 
-<h2 id="integrative-experience">Integrative Experience</h2>
-<aside>
-    PurrPals represents the culmination of my university education and personal growth journey, integrating various aspects of my coursework and life experiences into a cohesive project. Throughout my academic journey, I have delved into courses such as web development, database management, and user experience design, laying the foundation for building a comprehensive web application like PurrPals. These courses equipped me with the technical skills and knowledge necessary to conceptualize, design, and implement a platform that addresses real-world challenges.
-</aside>
-<br>
-<aside>
-    Additionally, my personal experiences as a cat owner and enthusiast have played a significant role in shaping the vision and mission of PurrPals. Through interactions with fellow pet owners and observations of my own cat's behavior, I recognized the need for a dedicated platform that facilitates socialization and companionship among cats. This realization sparked the idea for PurrPals and fueled my passion for creating a community-driven solution to a tangible real-world issue.
-</aside>
-<br>
-<aside>
-    As I embark on the journey of developing PurrPals, I draw upon the lessons learned from both my academic coursework and personal experiences, weaving together technical expertise, creative innovation, and empathy for animals and their owners. PurrPals serves as an integrative experience that not only showcases my academic achievements but also reflects my personal growth, values, and aspirations. Through this project, I aim to make a meaningful impact on the lives of cats and their owners while demonstrating the transformative power of technology in fostering connection, community, and compassion.
-</aside>
+    <h2 id="real-world">Real-World Connection</h2>
+    <aside>
+        As the human-animal bond continues to deepen, pet ownership has become an integral part of many people's lives,
+        offering companionship, emotional support, and a sense of belonging. However, for cat owners, finding suitable
+        companionship for their beloved felines can often be a challenging and isolating experience. This is where
+        PurrPals steps in to address a tangible real-world issue – the need for cats to find friends and socialize in a
+        safe and engaging environment.
+    </aside>
+    <br>
+    <aside>
+        Much like humans, cats thrive on social interactions and playmates, yet many owners struggle to facilitate these
+        connections due to limited opportunities or resources. PurrPals bridges this gap by providing a dedicated
+        platform where cat owners can connect with like-minded individuals, arrange playdates for their pets, and foster
+        meaningful relationships within the feline community. By leveraging technology to promote socialization among
+        cats, PurrPals aims to enhance the well-being and happiness of our furry friends while alleviating the isolation
+        and loneliness experienced by many owners.
+    </aside>
+    <br>
+    <aside>
+        In today's fast-paced world, where urbanization and digitalization have led to increased social fragmentation,
+        initiatives that promote connection and community-building are more important than ever. PurrPals not only
+        addresses the practical challenge of finding companionship for cats but also serves a deeper purpose by
+        fostering a sense of belonging and camaraderie among pet owners. By creating a supportive online environment
+        where cats can thrive socially, PurrPals contributes to the overall well-being of both pets and their human
+        companions, exemplifying how technology can be harnessed to address real-world issues and enrich lives in
+        meaningful ways.
+    </aside>
+    In conclusion, PurrPals embodies the intersection of technology and compassion, offering a solution to a tangible
+    real-world issue by promoting socialization and companionship among cats. Through its innovative approach to
+    connecting pet owners and fostering community, PurrPals strives to make a positive impact on the lives of cats and
+    their owners, demonstrating the transformative potential of digital platforms in addressing the diverse needs of our
+    society.
+
+    <h2 id="integrative-experience">Integrative Experience</h2>
+    <aside>
+        PurrPals represents the culmination of my university education and personal growth journey, integrating various
+        aspects of my coursework and life experiences into a cohesive project. Throughout my academic journey, I have
+        delved into courses such as web development, database management, and user experience design, laying the
+        foundation for building a comprehensive web application like PurrPals. These courses equipped me with the
+        technical skills and knowledge necessary to conceptualize, design, and implement a platform that addresses
+        real-world challenges.
+    </aside>
+    <br>
+    <aside>
+        Additionally, my personal experiences as a cat owner and enthusiast have played a significant role in shaping
+        the vision and mission of PurrPals. Through interactions with fellow pet owners and observations of my own cat's
+        behavior, I recognized the need for a dedicated platform that facilitates socialization and companionship among
+        cats. This realization sparked the idea for PurrPals and fueled my passion for creating a community-driven
+        solution to a tangible real-world issue.
+    </aside>
+    <br>
+    <aside>
+        As I embark on the journey of developing PurrPals, I draw upon the lessons learned from both my academic
+        coursework and personal experiences, weaving together technical expertise, creative innovation, and empathy for
+        animals and their owners. PurrPals serves as an integrative experience that not only showcases my academic
+        achievements but also reflects my personal growth, values, and aspirations. Through this project, I aim to make
+        a meaningful impact on the lives of cats and their owners while demonstrating the transformative power of
+        technology in fostering connection, community, and compassion.
+    </aside>
 
     <main>
         <!-- Main content of the document -->
@@ -139,4 +218,5 @@ In conclusion, PurrPals embodies the intersection of technology and compassion, 
         <!-- Footer content like copyright, links to privacy policy, etc. -->
     </footer>
 </body>
+
 </html>
