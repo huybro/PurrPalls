@@ -2,6 +2,12 @@ body {
     margin:0;
     padding:0;
     min-width: 1140px;
+    background-image: url("../figures/background.jpg");
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    width: auto;
+    height: auto;
 }
 
 #header {
@@ -46,7 +52,6 @@ body {
 footer {
     text-align: center;
     padding: 20px 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #E6CCB2;
@@ -70,8 +75,20 @@ footer {
     color: white;
 }
 
-#login, #signup {
-    width: 300px;
+#login {
+    width: 400px;
+    height: 250px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Itim';
+}
+
+#signup {
+    width: 400px;
+    height: 350px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -102,7 +119,7 @@ footer {
 }
 
 #login button, #signup button {
-    width: 25%;
+    width: 30%;
     padding: 8px;
     margin: 0 auto;
     display: block;
@@ -113,6 +130,7 @@ footer {
     cursor: pointer;
     font-weight: bold;
     font-family: 'Itim';
+    font-size: medium;
 }
 
 #login a, #signup a {
@@ -120,7 +138,8 @@ footer {
     text-decoration: none;
     font-family: 'Itim';
     font-size: medium;
-
+    text-align: center;
+    display: block;
 }
 
 #login a:hover, #signup a:hover {
@@ -130,6 +149,8 @@ footer {
 .thin {
     font-weight: lighter;
     font-size:medium;
+    display: block;
+    text-align: center;
 }
 .bold {
     font-weight: bold;
