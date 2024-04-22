@@ -29,16 +29,13 @@
     "Minh Tuan Nguyen, tuanminhnguyen3323@umass.edu, tuanminhnguyen3323"
   ],
   "scripts": {
-    "start": "node src/index.html",
+    "start": "http-server src -p 3000 -c-1 -o -s",
     "test": ""
   },
   "dependencies": {
-    "http-server": "^14.1.1",
     "bootstrap": "^5.3.3",
+    "http-server": "^14.1.1",
     "jsonwebtoken": "^9.0.2",
     "pouchdb": "^8.0.1"
-  },
-  "devDependencies": {
-
   }
 }
