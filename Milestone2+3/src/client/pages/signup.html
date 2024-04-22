@@ -6,19 +6,27 @@
     <title>Milestone2
     </title>
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles/login-signup.css">
     <!-- JavaScript Files -->
     <script type="module" src="script.js" defer></script>
 </head>
 <body>
-    <div id="login">
-        <h3 id="login-sign">Sign Up</h3>
-        <label for="username">Username</label><br><input type="text" id="username"><br>
-        <label for="password">Password</label><br><input type="text" id="password"><br>
-        <label for="email">Email</label><br><input type="text" id="email"><br>
-        <a href="https://www.PurrPals.com/forget-password" id="forget-password">Forgot Password?</a>
-        <button type="button" id="login-button">Sign Up</button>
+    <div id="header">
+        <ul>
+            <li id="inbox-button">Inbox</li>
+            <li id="website-name">Purrpals</li>
+            <li id="profile-button">Profile</li>
+        </ul>
     </div>
+    <div id="signup">
+        <h3 id="signup-sign">Sign Up</h3>
+        <label for="username" class="bold">Username</label><br><input type="text" id="username"><br>
+        <label for="password" class="bold">Password</label><br><input type="password" id="password"><br>
+        <label for="email" class="bold">Email</label><br><input type="text" id="email"><br>
+        <button type="button" id="signup-button">Sign Up</button><br>
+        <span class="thin">Have an account?</span> <a href="./login.html" id="login-redirect">Login</a>
+    </div>
+    <footer></footer>
 </body>
 
 

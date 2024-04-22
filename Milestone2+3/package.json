@@ -33,12 +33,9 @@
     "test": ""
   },
   "dependencies": {
-    "http-server": "^14.1.1",
     "bootstrap": "^5.3.3",
+    "http-server": "^14.1.1",
     "jsonwebtoken": "^9.0.2",
     "pouchdb": "^8.0.1"
-  },
-  "devDependencies": {
-
   }
 }
