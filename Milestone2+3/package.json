@@ -29,7 +29,7 @@
     "Minh Tuan Nguyen, tuanminhnguyen3323@umass.edu, tuanminhnguyen3323"
   ],
   "scripts": {
-    "start": "node src/index.html",
+    "start": "http-server src -p 3000 -c-1 -o -s",
     "test": ""
   },
   "dependencies": {
