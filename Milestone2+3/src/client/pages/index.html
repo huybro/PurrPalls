@@ -6,30 +6,36 @@
     <title>Milestone2
     </title>
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles/index.css">
     <!-- JavaScript Files -->
     <script type="module" src="script.js" defer></script>
+    <!--- Icon -->
+    <script src="https://kit.fontawesome.com/d19384aeac.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header></header>
-    <div id = "index">
-        <div id = "container">
-            <img class="profile-image" src="" >
-            <div id = "profile-info">
-                <h1>May</h1>
-                <p>Domestic Short Hair, 3 years, Male</p> 
+    <div id="header"></div>
+    <main>
+        <div class="container row justify-content-center">
+            <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 overflow-hidden rounded-lg">
+                <img class="profile-image" src="../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg" alt="May the cat">
+                <div class="swipe-buttons">
+                    <button class="swipe-left"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="swipe-right"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="profile-info">
+                    <h1>May</h1>
+                    <p>Domestic Short Hair</p>
+                    <p>3 years</p>
+                    <p>Male</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="dislike-btn"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="like-btn"><i class="fa-solid fa-check"></i></button>
+                </div>
             </div>
-            <div class="swipe-buttons"> 
-                <button class="swipe-left"></button>
-                <button class="swipe-right"></button> 
-            </div> 
-            <div class="swipe-buttons"> 
-                <button class="swipe-no"></button> 
-                <button class="swipe-yes"></button> 
-            </div> 
         </div>
-    </div>
-    <footer></footer>
+    </main>
+    <div id="footer"></div>
 </body>
 </html>
 
