@@ -1,0 +1,123 @@
+body {
+    margin:0;
+    padding:0;
+    min-width: 1140px;
+}
+
+#header {
+    background-color:#B7936E; /* Background color for the header */
+    padding: 10px 20px;
+}
+
+/* Styles for the unordered list */
+#header ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between;
+    align-items: center;
+}
+/* Styles for list items */
+#header ul li {
+    color: #fff; /* Text color */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: 'Itim';
+    padding: 5px 10px;
+}
+
+#header ul li#inbox-button, #header ul li#profile-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-family: 'Itim';
+    font-size: 18px;
+}
+
+#header ul li#website-name {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6CCB2;
+    color: white;
+    margin: 0;
+}
+
+#inbox-button, #profile-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-family: 'Itim';
+    font-size: 18px;
+}
+
+#website-name {
+    font-size: 24px;
+    margin: 0;
+    color: white;
+}
+
+#login {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Itim';
+}
+
+#login h3 {
+    margin-top: 0;
+}
+
+.label {
+    font-weight: bold;
+}
+#login input[type="text"],
+#login input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    box-sizing: border-box;
+    background-color: #D9D9D9D9;
+    border: 0px;
+    border-radius: 10px;
+}
+
+#login button {
+    width: 30%;
+    padding: 5px;
+    margin: auto auto auto 90px;
+    background-color: #D9D9D9D9;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Itim';
+}
+
+#login a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Inter';
+    font-weight: lighter;
+}
+
+#login a:hover {
+    text-decoration: underline;
+}

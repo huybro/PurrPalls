@@ -6,20 +6,23 @@
     <title>Milestone2
     </title>
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- JavaScript Files -->
     <script type="module" src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <button type="button" id="inbox-button">Inbox</button>
-        <h1 id="website-name">Purrpals</h1>
-        <button type="button" id="profile-button">Profile</button>
-    </header>
+    <div id="header">
+        <ul>
+            <li id="inbox-button">Inbox</li>
+            <li id="website-name">Purrpals</li>
+            <li id="profile-button">Profile</li>
+        </ul>
+    </div>
     <div id="login">
         <h3 id="login-sign">Login</h3>
-        <label for="username">Username</label><br><input type="text" id="username"><br>
-        <label for="password">Password</label><br><input type="text" id="password"><br>
+        <label for="username" class="label">Username</label><br><input type="text" id="username"><br>
+        <label for="password" class="label">Password</label><br><input type="text" id="password"><br>
         <a href="https://www.PurrPals.com/forget-password" id="forget-password">Forgot Password?</a>
         <button type="button" id="login-button">Login</button>
     </div>
