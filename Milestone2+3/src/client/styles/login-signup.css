@@ -70,7 +70,7 @@ footer {
     color: white;
 }
 
-#login {
+#login, #signup {
     width: 300px;
     margin: 50px auto;
     padding: 20px;
@@ -80,15 +80,18 @@ footer {
     font-family: 'Itim';
 }
 
-#login h3 {
+#login h3, #signup h3 {
     margin-top: 0;
 }
 
 .label {
     font-weight: bold;
 }
+
 #login input[type="text"],
-#login input[type="password"] {
+#login input[type="password"],
+#signup input[type="text"],
+#signup input[type="password"]  {
     width: 100%;
     padding: 8px;
     margin: 5px 0 15px;
@@ -98,10 +101,11 @@ footer {
     border-radius: 10px;
 }
 
-#login button {
-    width: 30%;
-    padding: 5px;
-    margin: auto auto auto 90px;
+#login button, #signup button {
+    width: 25%;
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
     background-color: #D9D9D9D9;
     color: black;
     border: none;
@@ -111,13 +115,22 @@ footer {
     font-family: 'Itim';
 }
 
-#login a {
-    color: rgb(0, 0, 0);
+#login a, #signup a {
+    color: black;
     text-decoration: none;
     font-family: 'Inter';
-    font-weight: lighter;
+    font-weight: bolder;
+
 }
 
-#login a:hover {
+#login a:hover, #signup a:hover {
     text-decoration: underline;
+}
+
+.thin {
+    font-weight: lighter;
+    font-size:medium;
+}
+.bold {
+    font-weight: bold;
 }
