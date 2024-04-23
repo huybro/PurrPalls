@@ -1,61 +1,78 @@
 function renderProfileInfo(profileData) {
-    const profileContainer = document.getElementById('profile-container');
-    const imgContainer = document.getElementById('image-container')
+  const profileContainer = document.getElementById('profile-container');
+  profileContainer.innerHTML = ''; // Clear previous content
 
-    profileContainer.innerHTML = '';
-    imgContainer.innerHTML = '';
+  const profileInfo = document.createElement('div');
+  profileInfo.className = 'profile-info';
 
-    const profileInfo = document.createElement('div');
-    profileInfo.className = 'profile-info';
+  const name = document.createElement('h1');
+  name.textContent = profileData.name;
 
-    const name = document.createElement('h1');
-    name.textContent = profileData.name;
+  const breed = document.createElement('p');
+  breed.textContent = profileData.breed;
 
-    const breed = document.createElement('p');
-    breed.textContent = profileData.breed;
+  const age = document.createElement('p');
+  age.textContent = `${profileData.age} years`;
 
-    const age = document.createElement('p');
-    age.textContent = `${profileData.age} years`;
+  const gender = document.createElement('p');
+  gender.textContent = profileData.gender;
 
-    const gender = document.createElement('p');
-    gender.textContent = profileData.gender;
+  profileInfo.appendChild(name);
+  profileInfo.appendChild(breed);
+  profileInfo.appendChild(age);
+  profileInfo.appendChild(gender);
 
-    profileInfo.appendChild(name);
-    profileInfo.appendChild(breed);
-    profileInfo.appendChild(age);
-    profileInfo.appendChild(gender);
-    profileContainer.appendChild(profileInfo);
+  profileContainer.appendChild(profileInfo);
+}
 
-    const img = document.createElement('img')
-    img.src = profileData.image;
-    img.className = 'profile-image'
-    imgContainer.appendChild(img)
+function renderProfileImage(profileData, imageIndex = 0) {
+  const imgContainer = document.getElementById('image-container');
+  imgContainer.innerHTML = ''; // Clear previous content
+
+  const img = document.createElement('img');
+  img.src = profileData.images[imageIndex];
+  img.className = 'profile-image';
+  imgContainer.appendChild(img);
 }
 
 let currentIndex = 0;
+let currentImageIndex = 0;
 
 const availableProfiles = [
-    { name: 'May', breed: 'Domestic Long Hair', age: 4, gender: 'Female', image: '../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg'},
-    { name: 'Buddy', breed: 'Siamese', age: 2, gender: 'Male', image: '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg' },
-    { name: 'Luna', breed: 'Persian', age: 5, gender: 'Female', image: '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg' },
-  ];
+  { name: 'May', breed: 'Domestic Long Hair', age: 4, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
+  { name: 'Buddy', breed: 'Siamese', age: 2, gender: 'Male', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
+  { name: 'Luna', breed: 'Persian', age: 5, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
+];
+
+function newProfile() {
+  currentIndex = (currentIndex + 1) % availableProfiles.length;
+  currentImageIndex = 0; 
+  renderProfileInfo(availableProfiles[currentIndex]);
+  renderProfileImage(availableProfiles[currentIndex], currentImageIndex);
+}
+
+const dislike = document.getElementById('dislike');
+const like = document.getElementById('like');
+
+// Task: Implement event to update match pet to database.
+dislike.addEventListener('click', newProfile);
+like.addEventListener('click', newProfile);
 
 function swipe(direction) {
-    if (direction === 'left') {
-      currentIndex = (currentIndex - 1 + availableProfiles.length) % availableProfiles.length;
-    } else if (direction === 'right') {
-      currentIndex = (currentIndex + 1) % availableProfiles.length;
-    }
-
-    renderProfileInfo(availableProfiles[currentIndex]);
+  if (direction === 'left') {
+    currentImageIndex = (currentImageIndex - 1 + availableProfiles[currentIndex].images.length) % availableProfiles[currentIndex].images.length;
+  } else if (direction === 'right') {
+    currentImageIndex = (currentImageIndex + 1) % availableProfiles[currentIndex].images.length;
   }
 
-  const swipeLeft = document.getElementById('left');
-  const swipeRight = document.getElementById('right');
+  renderProfileImage(availableProfiles[currentIndex], currentImageIndex);
+}
 
-  swipeLeft.addEventListener('click', () => swipe('left'));
-  swipeRight.addEventListener('click', () => swipe('right'));
+const swipeLeft = document.getElementById('left');
+const swipeRight = document.getElementById('right');
 
-  renderProfileInfo(availableProfiles[currentIndex]);
+swipeLeft.addEventListener('click', () => swipe('left'));
+swipeRight.addEventListener('click', () => swipe('right'));
 
-
+renderProfileInfo(availableProfiles[currentIndex]);
+renderProfileImage(availableProfiles[currentIndex], currentImageIndex);
