@@ -1,12 +1,70 @@
+body {
+    margin:0;
+    padding:0;
+    min-width: 1140px;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: auto;
+    height: auto;
+}
+
+#header {
+    background-color:#B7936E; 
+    padding: 10px 20px;
+}
+
+#header ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header ul li {
+    color: #fff; 
+    font-size: 18px; 
+    cursor: pointer; 
+    font-family: 'Itim';
+    padding: 5px 10px;
+}
+
+#header ul li#inbox-button, #header ul li#profile-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-family: 'Itim';
+    font-size: 18px;
+}
+
+#header ul li#website-name {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #E6CCB2;
+    color: white;
+    margin: 0;
+}
 .container {
     max-width: 500px;
     margin: 20px auto;
     background-color: white;
     text-align: center;
     position: relative;
-    height: 90vh;
-    border-radius: 5%;
-    font-family: I;
+    height: 85vh;
+    border-radius: 10%;
+    font-family:'Itim';
 }
 
 .profile-image {
@@ -16,7 +74,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 .profile-info {
