@@ -3,15 +3,15 @@ export class Available {
     #name
     #breed
     #age
-    #sex
+    #gender
     #images
 
-    constructor(name, breed, age, sex, images){
+    constructor(name, breed, age, gender, images){
         this.#age = age
         this.#breed = breed
         this.#images = images
         this.#name = name
-        this.#sex = sex
+        this.#gender = gender
     }
 
     getAttr(key){

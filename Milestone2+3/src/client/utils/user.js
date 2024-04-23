@@ -3,7 +3,7 @@ export class User{
     #email
     #age
     #name
-    #sex
+    #gender
     #image
     #breed
     #last_likes
@@ -11,11 +11,11 @@ export class User{
     #hobby
     #quote
 
-    constructor(email, name, age, sex, image, breed, last_likes, description, hobby, quote){
+    constructor(email, name, age, gender , image, breed, last_likes, description, hobby, quote){
         this.#email = email
         this.#name = name
         this.#age = age
-        this.#sex = sex
+        this.#gender = gender
         this.#image = image
         this.#breed = breed
         this.#last_likes = last_likes
