@@ -28,4 +28,7 @@ export class User{
     getAttr(key){
         return this[key]
     }
+    getId(){
+        return this.#id
+    }
 }

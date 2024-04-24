@@ -1,6 +1,8 @@
 import { getAvailableProfile } from "./db.js";
+import './script.js';
 
 const availableProfiles = await getAvailableProfile();
+console.log(availableProfiles)
 
 // const availableProfiles = [
 //   { name: 'May', breed: 'Domestic Long Hair', age: 4, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
@@ -15,16 +17,16 @@ function renderProfileInfo(profileData) {
   profileInfo.className = 'profile-info';
 
   const name = document.createElement('h1');
-  name.textContent = profileData.name;
+  name.textContent = profileData.getAttr('name');
 
   const breed = document.createElement('p');
-  breed.textContent = profileData.breed;
+  breed.textContent = profileData.getAttr('breed');
 
   const age = document.createElement('p');
-  age.textContent = `${profileData.age} years`;
+  age.textContent = `${profileData.getAttr('age')} years`;
 
   const gender = document.createElement('p');
-  gender.textContent = profileData.gender;
+  gender.textContent = profileData.getAttr('gender');
 
   profileInfo.appendChild(name);
   profileInfo.appendChild(breed);
