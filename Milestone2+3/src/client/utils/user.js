@@ -25,7 +25,7 @@ export class User{
         this.#hobby = hobby
         this.#quote = quote
     }
-    get_info(key){
+    getAttr(key){
         return this[key]
     }
 }
