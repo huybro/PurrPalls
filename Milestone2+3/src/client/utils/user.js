@@ -1,5 +1,6 @@
 export class User{
     // User's attributes
+    #id
     #email
     #age
     #name
@@ -11,7 +12,8 @@ export class User{
     #hobby
     #quote
 
-    constructor(email, name, age, gender , image, breed, last_likes, description, hobby, quote){
+    constructor(id, email, name, age, gender , image, breed, last_likes, description, hobby, quote){
+        this.#id = id
         this.#email = email
         this.#name = name
         this.#age = age

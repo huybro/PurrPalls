@@ -1,3 +1,12 @@
+import { getAvailableProfile } from "./script.js";
+
+// let availableProfiles = await getAvailableProfile();
+
+const availableProfiles = [
+  { name: 'May', breed: 'Domestic Long Hair', age: 4, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
+  { name: 'Buddy', breed: 'Siamese', age: 2, gender: 'Male', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
+  { name: 'Luna', breed: 'Persian', age: 5, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
+];
 function renderProfileInfo(profileData) {
   const profileContainer = document.getElementById('profile-container');
   profileContainer.innerHTML = ''; // Clear previous content
@@ -37,12 +46,6 @@ function renderProfileImage(profileData, imageIndex = 0) {
 
 let currentIndex = 0;
 let currentImageIndex = 0;
-
-const availableProfiles = [
-  { name: 'May', breed: 'Domestic Long Hair', age: 4, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
-  { name: 'Buddy', breed: 'Siamese', age: 2, gender: 'Male', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
-  { name: 'Luna', breed: 'Persian', age: 5, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
-];
 
 function newProfile() {
   currentIndex = (currentIndex + 1) % availableProfiles.length;
