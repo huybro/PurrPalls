@@ -5,8 +5,10 @@ export class Available {
     #age
     #gender
     #images
+    #id
 
-    constructor(name, breed, age, gender, images){
+    constructor(id, name, breed, age, gender, images){
+        this.#id = id
         this.#age = age
         this.#breed = breed
         this.#images = images
