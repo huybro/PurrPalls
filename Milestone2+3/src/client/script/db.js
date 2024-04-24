@@ -1,5 +1,3 @@
-import PouchDB from 'pouchdb';
- 
 const db = new PouchDB('user');
 
 export async function saveUser(user){
