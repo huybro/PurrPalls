@@ -29,7 +29,7 @@
     "Minh Tuan Nguyen, tuanminhnguyen3323@umass.edu, tuanminhnguyen3323"
   ],
   "scripts": {
-    "start": "http-server src/client -p 3000 -c-1 -o -s",
+    "milestone-02": "http-server src/client -p 3000 -c-1 -o -s",
     "test": "node src/client/script/script.js"
   },
   "dependencies": {
