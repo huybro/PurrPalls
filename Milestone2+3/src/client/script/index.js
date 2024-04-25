@@ -1,5 +1,6 @@
 import { getAvailableProfile } from "./db.js";
 import './script.js';
+import { Available } from "../utils/available.js";
 
 const availableProfiles = await getAvailableProfile();
 console.log(availableProfiles)
@@ -9,7 +10,16 @@ console.log(availableProfiles)
 //   { name: 'Buddy', breed: 'Siamese', age: 2, gender: 'Male', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
 //   { name: 'Luna', breed: 'Persian', age: 5, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
 // ];
-function renderProfileInfo(profileData) {
+function renderProfileInfo(profileDataObject) {
+  const profileData = new Available(
+    profileDataObject._id, 
+    profileDataObject.name, 
+    profileDataObject.breed, 
+    profileDataObject.age,
+    profileDataObject.gender, 
+    profileDataObject.images
+  );
+
   const profileContainer = document.getElementById('profile-container');
   profileContainer.innerHTML = '';
 
