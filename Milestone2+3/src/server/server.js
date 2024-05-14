@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { authenticateToken } from './authentication.js';
+import { authenticateToken, checkCredentials, generateToken } from './authentication.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,9 +20,20 @@ app.get('/index', authenticateToken,(req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'index.html'));
 });
 
-// Route handler for /login
+// Route handler for /login, get the page
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'login.html'));
+});
+
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    const user = checkCredentials(email, password);
+    if (!user) {
+        return res.status(401).json({ message: 'Invalid email or password' });
+    }
+    const token = generateToken(user);
+    res.json({ token });
+    res.status(200).json({ message: 'Login successful' });
 });
 
 // Route handler for /signup

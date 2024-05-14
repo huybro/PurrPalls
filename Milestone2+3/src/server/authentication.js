@@ -1,4 +1,4 @@
-import { jwt } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import { findUserByEmailAndPassword } from './db.js';
 // Function to check if email and password exist and match
 export async function checkCredentials(email, password) {
