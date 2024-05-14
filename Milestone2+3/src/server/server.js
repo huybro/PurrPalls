@@ -9,6 +9,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
+app.use(express.json());
 // Serve static files from the "client/pages" directory
 app.use(express.static(path.join(__dirname, '../client')));
 
@@ -25,15 +26,14 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'login.html'));
 });
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = checkCredentials(email, password);
     if (!user) {
         return res.status(401).json({ message: 'Invalid email or password' });
     }
     const token = generateToken(user);
-    res.json({ token });
-    res.status(200).json({ message: 'Login successful' });
+    res.status(200).json({ token });
 });
 
 // Route handler for /signup
