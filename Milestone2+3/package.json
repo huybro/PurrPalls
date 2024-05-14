@@ -30,12 +30,14 @@
   ],
   "scripts": {
     "milestone-02": "http-server src/client -p 3000 -c-1 -o -s",
+    "milestone-03": "node src/server/server.js",
     "test": "node src/client/script/script.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "http-server": "^14.1.1",
     "jsonwebtoken": "^9.0.2",
-    "pouchdb": "^8.0.1"
+    "pouchdb": "^8.0.1",
+    "express": "^4.17.1"
   }
 }
