@@ -4,6 +4,7 @@ import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { authenticateToken, checkCredentials, generateToken } from './authentication.js';
+import {getAvailableProfiles} from './db.js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,11 +20,21 @@ app.use(express.static(path.join(__dirname, '../client')));
 // Serve static files from the "client/css" directory
 app.use('/css', express.static(path.join(__dirname, '../client/styles')));
 
+
 // Route handler for /index
-app.get('/index', authenticateToken,(req, res) => {
+app.get('/index',(req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'index.html'));
 });
 
+app.get('/index/data', async (req, res) => {
+    try {
+        const availableProfiles = await getAvailableProfiles();
+        res.json(availableProfiles);
+    } catch (error) {
+        console.error('Error fetching available profiles:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 // Route handler for /login, get the page
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'login.html'));
@@ -48,6 +59,7 @@ app.get('/signup', (req, res) => {
 app.get('/profile', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'settings.html'));
 });
+
 
 // Start the server
 app.listen(3000, () => {
