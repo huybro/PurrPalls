@@ -16,7 +16,7 @@ const res = await fetch("http://127.0.0.1:3000/index/data", {
 });
 
 const availableProfiles = await res.json(); 
-
+console.log(availableProfiles);
 
 function renderProfileInfo(profileDataObject) {
   const profileData = new Available(
@@ -74,12 +74,24 @@ function newProfile() {
   renderProfileImage(availableProfiles[currentIndex], currentImageIndex);
 }
 
+function checkMatch() {
+  const currentProfileLikes = availableProfiles[currentIndex].matches;
+  console.log("current likes", currentProfileLikes);
+  console.log("user", user._id)
+  return currentProfileLikes.includes(user._id);
+  }
+
 const dislike = document.getElementById('dislike');
 const like = document.getElementById('like');
 
 // Task: Implement event to update match pet to database.
 dislike.addEventListener('click', newProfile);
-like.addEventListener('click', newProfile);
+like.addEventListener('click', ()=>{
+  if (checkMatch()) {
+    alert(`You guys are a match! Here is contact information ${availableProfiles[currentIndex].email}`);
+  }
+  newProfile()
+});
 
 function swipe(direction) {
   if (direction === 'left') {
@@ -95,7 +107,7 @@ const swipeLeft = document.getElementById('left');
 const swipeRight = document.getElementById('right');
 
 swipeLeft.addEventListener('click', () => swipe('left'));
-swipeRight.addEventListener('click', () => swipe('right'));
+swipeRight.addEventListener('click', () => {swipe('right')});
 
 renderProfileInfo(availableProfiles[currentIndex]);
 renderProfileImage(availableProfiles[currentIndex], currentImageIndex);

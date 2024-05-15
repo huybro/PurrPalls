@@ -1,6 +1,6 @@
 export class User{
     // User's attributes
-    constructor(id, email,password, name, age, gender , image, breed){
+    constructor(id, email,password, name, age, gender , image, breed, matches=null){
         this.id = id
         this.email = email
         this.password = password
@@ -9,6 +9,7 @@ export class User{
         this.gender = gender
         this.image = image
         this.breed = breed
+        this.matches = (matches) ? matches : []
     }
 
     getId(){
