@@ -14,11 +14,7 @@ const res = await fetch("http://127.0.0.1:3000/index/data", {
 const availableProfiles = await res.json(); 
 
 console.log(availableProfiles);
-// const availableProfiles = [
-//   { name: 'May', breed: 'Domestic Long Hair', age: 4, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
-//   { name: 'Buddy', breed: 'Siamese', age: 2, gender: 'Male', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
-//   { name: 'Luna', breed: 'Persian', age: 5, gender: 'Female', images: ['../../../../Milestone1/figures/cat_pic/pexels-evg-kowalievska-1170986.jpg', '../../../../Milestone1/figures/cat_pic/pexels-cats-coming-1543793.jpg', '../../../../Milestone1/figures/cat_pic/pexels-pixabay-45201.jpg'] },
-// ];
+
 function renderProfileInfo(profileDataObject) {
   const profileData = new Available(
     profileDataObject._id, 
