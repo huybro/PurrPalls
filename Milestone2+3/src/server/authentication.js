@@ -32,7 +32,7 @@ export function generateToken(user) {
 
 // Middleware function to authenticate JWT token
 export function authenticateToken(req, res, next) {
-    const token = req.headers.authorization;
+    const token = req.headers.authorization
 
     jwt.verify(token, 'ilovecs326', (err, decoded) => {
         console.log('Token:', token);

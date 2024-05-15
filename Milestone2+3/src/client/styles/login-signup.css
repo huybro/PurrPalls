@@ -1,7 +1,7 @@
 body {
     margin:0;
     padding:0;
-    min-width: 1140px;
+    width: 100;
     background-image: url("../figures/background.jpg");
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the image */

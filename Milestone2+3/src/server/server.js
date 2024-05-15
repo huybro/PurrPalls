@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { authenticateToken, checkCredentials, generateToken } from './authentication.js';
@@ -8,6 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
+
+app.use(cors())
 
 app.use(express.json());
 // Serve static files from the "client/pages" directory
