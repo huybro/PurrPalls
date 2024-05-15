@@ -43,6 +43,17 @@ export async function findUserByEmailAndPassword(email, password) {
     }
 }
 
+export async function findUserByEmail(email) {
+    try {
+        const result = await dbUser.allDocs({ include_docs: true });
+        const profiles = result.rows.map(row => row.doc);
+        const user = profiles.find(profile => profile.email === email);
+        return user;
+    } catch (error) {
+        console.error("Error fetching profiles: ", error);
+        return null;
+    }
+}
 
 export async function getAvailableProfiles() {
     try {
@@ -55,10 +66,13 @@ export async function getAvailableProfiles() {
     }
 }
 
-export async function updateProfileInfo(id, ...user) {
+export async function updateProfileInfo(_id, user) {
     try {
-        await dbUser.put({ _id: id, ...user });
-        console.log("Profile updated successfully");
+        console.log(user)
+        const profile = await dbUser.get(_id);
+        await dbUser.remove(profile);
+        await dbUser.put({ _id: _id, ...user });
+        console.log("Profile updated successful");
     } catch (error) {
         console.error("Error updating profile: ", error);
         throw error;
@@ -80,11 +94,14 @@ export async function deleteProfileInfo(id) {
 
 export async function createNewProfile(user) {
     try {
-        const existingUser = await findUserByEmailAndPassword(user.email, user.password);
+        const existingUser = await findUserByEmail(user.email);
         if (!existingUser) {
           await dbUser.put({ _id: user.email, ...user });
+          console.log("New profile created successfully");
+        } else {
+            alert("Email already exists");
         }
-        console.log("New profile created successfully");
+        
     } catch (error) {
         console.error("Error creating profile: ", error);
         throw error;

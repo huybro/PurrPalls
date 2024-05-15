@@ -1,13 +1,19 @@
-const URL = "http://127.0.0.1:3000/";
+import {getUser, saveUser} from './db.js';
 
-const user = JSON.parse(localStorage.getItem('user'));
-console.log("index dep trai",user);
+const userPromise = await getUser();
+const user = userPromise.user
+console.log(user);
+
+const URL = "http://127.0.0.1:3000/";
 
 const email = document.getElementById('email');
 email.value = user.email;
 
 const password = document.getElementById('password');
 password.value = user.password;
+
+const newPassword = document.getElementById('newPassword');
+const confirmNewPassword = document.getElementById('confirmNewPassword');
 
 const name = document.getElementById('name');
 name.value = user.name;
@@ -39,13 +45,40 @@ deleteButton.addEventListener('click', async () => {
         const response = await fetch(URL+'deleteProfile/'+id, {
             method: 'DELETE'
         });
+        window.location.href = '/login';
     }
-    localStorage.removeItem('user');
-    window.location.href = '/login';
 });
 
 const saveButton = document.getElementById('save-button');
-// saveButton.addEventListener('click', async () => {
+saveButton.addEventListener('click', async () => {
+    if ((newPassword.value !== undefined) && newPassword.value !== confirmNewPassword.value) {
+        alert("New password not match.")
+    } else {
+        const updatedUser = {
+            _id: user._id,
+            email: email.value,
+            password: (newPassword.value !== undefined) ? newPassword.value : password.value,
+            age: age.value,
+            breed: breed.value,
+            gender: gender.value,
+            name: name.value,
+        }
+        const response = await fetch(URL+'setting', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ user: updatedUser })
+        });
+        const profile = await user.get(_id);
+        await user.remove(profile);
+        await user.put({ _id: _id, ...user });
+        alert('Profile information updated successfully');
+        window.location.href = '/setting';
+    }
+})
+
+
 
 
 

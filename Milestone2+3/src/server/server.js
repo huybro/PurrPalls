@@ -75,8 +75,8 @@ app.get('/setting', (req, res) => {
 app.put('/setting', async (req, res) => {
     // Extract the updated information from the request body
     const { user } = req.body;
-
-    await updateProfileInfo(user.id, ...user);
+    console.log("user",user);
+    await updateProfileInfo(user._id, user);
 
     // Send a success response
     res.status(200).json({ message: 'Profile information updated successfully' });

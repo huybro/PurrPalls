@@ -23,4 +23,6 @@ signupButton.addEventListener('click', async () => {
         },
         body: JSON.stringify({ email, password })
     });
+    alert('Account created successfully');
+    window.location.href = '/login';
 });
