@@ -1,7 +1,9 @@
-import {getUser } from "./db.js";
+// import { getUser } from "./db.js";
 import { Available } from "../utils/available.js";
 import { User } from "../utils/user.js";
 
+const user = JSON.parse(localStorage.getItem('user'));
+console.log("index dep trai",user);
 
 const res = await fetch("http://127.0.0.1:3000/index/data", {
   method: 'GET',

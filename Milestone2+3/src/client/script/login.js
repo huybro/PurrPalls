@@ -1,4 +1,6 @@
-const base_URL = "http://127.0.0.1:3000/";
+// import { saveUser } from "./db.js";
+
+const URL = "http://127.0.0.1:3000/";
 const loginButton = document.getElementById('login-button');
 
 
@@ -8,7 +10,7 @@ async function authenticate(email, password){
         alert('Please enter email and password');
         return null;
     }
-    const response = await fetch(base_URL + 'login', {
+    const response = await fetch(URL + 'login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -21,14 +23,11 @@ async function authenticate(email, password){
 loginButton.addEventListener('click', async () => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    const { token } = await authenticate(email, password); 
-    if (!token) {
+    const { user } = await authenticate(email, password); 
+    if (!user) {
         alert('Invalid email or password');
         return;
     }
-    localStorage.setItem('token', token);
-    fetch(base_URL + 'index', {  
-        method: 'GET',
-        headers: { Authorization: `${token}` } 
-    })
+    localStorage.setItem('user', JSON.stringify(user));
+    window.location.href = '/index';
 });

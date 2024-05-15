@@ -24,19 +24,19 @@
               <h3 id="settings-title">Settings</h3>
               <div id="settings-photos">
                 <div class="row settings-photos-row">
-                    <div class="settings-photo col-4"></div>
-                    <div class="settings-photo col-4"></div>
-                    <div class="settings-photo col-4"></div>
+                    <div class="settings-photo col-4" id="settings-photo-1"></div>
+                    <div class="settings-photo col-4" id="settings-photo-2"></div>
+                    <div class="settings-photo col-4" id="settings-photo-3"></div>
                 </div>
                 <div class="row settings-photos-row">
-                    <div class="settings-photo col-4"></div>
-                    <div class="settings-photo col-4"></div>
-                    <div class="settings-photo col-4"></div>
+                    <div class="settings-photo col-4" id="settings-photo-4"></div>
+                    <div class="settings-photo col-4" id="settings-photo-5"></div>
+                    <div class="settings-photo col-4" id="settings-photo-6"></div>
                 </div>
                 <div class="row settings-photos-row">
-                    <div class="settings-photo col-4"></div>
-                    <div class="settings-photo col-4"></div>
-                    <div class="settings-photo col-4"></div>
+                    <div class="settings-photo col-4" id="settings-photo-7"></div>
+                    <div class="settings-photo col-4" id="settings-photo-8"></div>
+                    <div class="settings-photo col-4" id="settings-photo-9"></div>
                 </div>
               </div>
               <div class="settings-photo-upload-group">
@@ -48,13 +48,15 @@
             </div>
             <div class="col-7" id="settings-right">
                 <div class="row">
-                    <div class="col-6" id="settings-right-right">
-                        <label for="username" class="label">Username</label><br>
-                        <input type="text" id="username"><br>
+                    <div class="col-6" id="settings-right-left">
+                        <label for="email" class="label">Email</label><br> 
+                        <input type="email" id="email"><br>     
                         <label for="password" class="label">Password</label><br>
                         <input type="password" id="password"><br>
-                        <label for="email" class="label">Email</label><br> 
-                        <input type="email" id="email"><br>               
+                        <label for="newPassword" class="label">New Password (optional)</label><br> 
+                        <input type="password" id="newPassword"><br>     
+                        <label for="confirmNewPassword" class="label">Confirm New Password</label><br>
+                        <input type="password" id="confirmNewPassword"><br>            
                     </div>
 
                     <div class="col-6" id="settings-right-right">
@@ -64,23 +66,18 @@
                     <input type="number" id="age"><br>
                     <label for="breed" class="label">Breed</label><br>
                     <input type="text" id="breed"><br>
-                    <label for="sex" class="label">Sex</label><br>
+                    <label for="gender" class="label">Gender</label><br>
                     <select id="gender" name="gender">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
-                    </select>
-                    <label for="preference" class="label">Preference</label><br>
-                    <select id="preference" name="preference">
-                        <option value="cats">Cats</option>
-                        <option value="dogs">Dogs</option>
-                        <option value="all">All</option>
                     </select>
                     </div>
                 </div>
                 <div id="settings-buttons">
                     <button id="save-button" class="btn btn-primary">Save</button>
                     <button id="cancel-button" class="btn btn-primary">Cancel</button>
+                    <button id="delete-button" class="btn btn-danger">Delete Account</button>
                 </div>
               </div>
             </div>
