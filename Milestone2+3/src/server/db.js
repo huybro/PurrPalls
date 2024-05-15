@@ -33,3 +33,15 @@ export async function findUserByEmailAndPassword(email, password) {
     }
     return null;
   }
+
+
+  export async function getAvailableProfiles() {
+    try {
+        const result = await dbUser.allDocs({ include_docs: true });
+        const profiles = result.rows.map(row => row.doc);
+        return profiles;
+    } catch (error) {
+        console.error("Error fetching profiles: ", error);
+        throw error;
+    }
+}
