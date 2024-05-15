@@ -1,3 +1,4 @@
+
 const URL = "http://127.0.0.1:3000/";
 const loginButton = document.getElementById('login-button');
 async function authenticate(email, password){
@@ -18,15 +19,8 @@ async function authenticate(email, password){
 loginButton.addEventListener('click', async () => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    const { token } = await authenticate(email, password); 
-    if (!token) {
-        alert('Invalid email or password');
-        return;
-    }
-    localStorage.setItem('token', token);
-    fetch(URL + 'index', {  
-        method: 'GET',
-        headers: { Authorization: `${token}` } 
-    }) 
+    const { user } = await authenticate(email, password); 
+    localStorage.setItem('user', user);
+    console.log(user);
     
 });

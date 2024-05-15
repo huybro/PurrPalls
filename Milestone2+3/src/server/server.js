@@ -44,7 +44,7 @@ app.post('/login', async (req, res) => {
         return res.status(401).json({ message: 'Invalid email or password' });
     }
     const token = generateToken(user);
-    res.status(200).json({ token });
+    res.status(200).json({ user });
 });
 
 // Route handler for /signup
