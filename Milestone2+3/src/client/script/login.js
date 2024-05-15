@@ -18,10 +18,18 @@ async function authenticate(email, password){
 loginButton.addEventListener('click', async () => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    console.log(email);
-    console.log(password);
     const { token } = await authenticate(email, password); 
-    console.log(token);
+    if (!token) {
+        alert('Invalid email or password');
+        return;
+    }
     localStorage.setItem('token', token);
-
+    fetch(URL + 'index', {  
+        method: 'GET',
+        headers: { Authorization: `${token}` } 
+    }).then(response => { 
+        if (response.status === 200) {
+            window.location.href = '/index';
+        }
+    }); 
 });
