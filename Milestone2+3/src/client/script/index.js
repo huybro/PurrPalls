@@ -1,5 +1,4 @@
 import {getUser } from "./db.js";
-import './script.js';
 import { Available } from "../utils/available.js";
 import { User } from "../utils/user.js";
 
