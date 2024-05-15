@@ -1,5 +1,8 @@
 const base_URL = "http://127.0.0.1:3000/";
 const loginButton = document.getElementById('login-button');
+
+
+
 async function authenticate(email, password){
     if (!email || !password) {
         alert('Please enter email and password');
