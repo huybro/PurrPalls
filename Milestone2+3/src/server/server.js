@@ -17,7 +17,6 @@ app.use(express.static(path.join(__dirname, '../client')));
 // Serve static files from the "client/css" directory
 app.use('/css', express.static(path.join(__dirname, '../client/styles')));
 
-
 // Route handler for /index
 app.get('/index',(req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'index.html'));
@@ -39,11 +38,10 @@ app.get('/login', (req, res) => {
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const user = checkCredentials(email, password);
+    const user = await checkCredentials(email, password);
     if (!user) {
         return res.status(401).json({ message: 'Invalid email or password' });
     }
-    const token = generateToken(user);
     res.status(200).json({ user });
 });
 

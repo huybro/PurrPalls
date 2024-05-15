@@ -1,7 +1,7 @@
 import PouchDB from 'pouchdb';
 import { User } from '../client/utils/user.js';
 
-const dbUser = new PouchDB('user');
+const dbUser = new PouchDB('userServer');
 const propUser1 = new User('0', "ktle@umass.edu", "ilovecs326", "Khiem", 3, "Male", ["../figures/cat_pic/cat1.jpg", "../figures/cat_pic/cat2.jpg", "../figures/cat_pic/cat3.jpg"], "Meo Lon")
 const propUser2 = new User('1', "tungnguyen@umass.edu", "ilovecs326", "Tung", 3, "Male", ["../figures/cat_pic/cat4.jpg", "../figures/cat_pic/cat5.jpg", "../figures/cat_pic/cat6.jpg"], "Meo Cho")
 const propUser3 = new User('2', "minhnguyen@umass.edu", "ilovecs326", "Minh", 3, "Male", ["../figures/cat_pic/cat9.jpg", "../figures/cat_pic/cat8.jpg", "../figures/cat_pic/cat7.jpg"], "Meo Ngu")

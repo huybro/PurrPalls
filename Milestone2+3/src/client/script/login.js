@@ -1,3 +1,4 @@
+import { saveUser } from "./db.js";
 
 const URL = "http://127.0.0.1:3000/";
 const loginButton = document.getElementById('login-button');
@@ -20,7 +21,10 @@ loginButton.addEventListener('click', async () => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     const { user } = await authenticate(email, password); 
-    localStorage.setItem('user', user);
-    console.log(user);
-    
+    if (!user) {
+        alert('Invalid email or password');
+        return;
+    }
+    localStorage.setItem('user', JSON.stringify(user));
+    window.location.href = '/index';
 });
