@@ -1,5 +1,4 @@
 import {getUser } from "./db.js";
-import './script.js';
 import { Available } from "../utils/available.js";
 import { User } from "../utils/user.js";
 
@@ -56,7 +55,7 @@ function renderProfileImage(profileData, imageIndex = 0) {
   imgContainer.innerHTML = ''; 
 
   const img = document.createElement('img');
-  img.src = profileData.images[imageIndex];
+  img.src = profileData.image[imageIndex];
   img.className = 'profile-image';
   imgContainer.appendChild(img);
 }
@@ -80,9 +79,9 @@ like.addEventListener('click', newProfile);
 
 function swipe(direction) {
   if (direction === 'left') {
-    currentImageIndex = (currentImageIndex - 1 + availableProfiles[currentIndex].images.length) % availableProfiles[currentIndex].images.length;
+    currentImageIndex = (currentImageIndex - 1 + availableProfiles[currentIndex].image.length) % availableProfiles[currentIndex].image.length;
   } else if (direction === 'right') {
-    currentImageIndex = (currentImageIndex + 1) % availableProfiles[currentIndex].images.length;
+    currentImageIndex = (currentImageIndex + 1) % availableProfiles[currentIndex].image.length;
   }
 
   renderProfileImage(availableProfiles[currentIndex], currentImageIndex);
