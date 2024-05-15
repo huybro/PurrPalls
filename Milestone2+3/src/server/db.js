@@ -1,6 +1,7 @@
 import PouchDB from 'pouchdb';
 import { User } from '../client/utils/user.js';
 
+// create sample data for ease of testing
 const dbUser = new PouchDB('userServer');
 const propUser1 = new User('0', "ktle@umass.edu", "ilovecs326", "Khiem", 3, "Male", ["../figures/cat_pic/cat1.jpg", "../figures/cat_pic/cat2.jpg", "../figures/cat_pic/cat3.jpg"], "Meo Lon")
 const propUser2 = new User('1', "tungnguyen@umass.edu", "ilovecs326", "Tung", 3, "Male", ["../figures/cat_pic/cat4.jpg", "../figures/cat_pic/cat5.jpg", "../figures/cat_pic/cat6.jpg"], "Meo Cho")
@@ -16,22 +17,15 @@ users.forEach(async (user) => {
     }
 });
 
+/**
+ * Find a user by email and password in the database.
+ * @async
+ * @function findUserByEmailAndPassword
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ * @returns {Promise<Object|null>} Returns the user object if found, otherwise returns null.
+ */
 export async function findUserByEmailAndPassword(email, password) {
-    // for (const id of availableId) {
-    //   try {
-    //     const user = await dbUser.get(id);
-    //     if (user.email === email && user.password === password) {
-    //       return user;
-    //     }
-    //   } catch (error) {
-    //     if (error.status === 404) {
-    //       continue;
-    //     } else {
-    //       throw error;
-    //     }
-    //   }
-    // }
-    // return null;
     try {
         const result = await dbUser.allDocs({ include_docs: true });
         const profiles = result.rows.map(row => row.doc);
@@ -43,6 +37,13 @@ export async function findUserByEmailAndPassword(email, password) {
     }
 }
 
+/**
+ * Find a user by email in the database.
+ * @async
+ * @function findUserByEmail
+ * @param {string} email - The user's email address.
+ * @returns {Promise<Object|null>} Returns the user object if found, otherwise returns null.
+ */
 export async function findUserByEmail(email) {
     try {
         const result = await dbUser.allDocs({ include_docs: true });
@@ -55,6 +56,12 @@ export async function findUserByEmail(email) {
     }
 }
 
+/**
+ * Get all available user profiles from the database.
+ * @async
+ * @function getAvailableProfiles
+ * @returns {Promise<Array>} Returns an array of user profile objects.
+ */
 export async function getAvailableProfiles() {
     try {
         const result = await dbUser.allDocs({ include_docs: true });
@@ -66,6 +73,14 @@ export async function getAvailableProfiles() {
     }
 }
 
+/**
+ * Update a user profile in the database.
+ * @async
+ * @function updateProfileInfo
+ * @param {string} _id - The ID of the user profile to update.
+ * @param {Object} user - The updated user object.
+ * @returns {Promise<void>}
+ */
 export async function updateProfileInfo(_id, user) {
     try {
         console.log(user)
@@ -79,6 +94,13 @@ export async function updateProfileInfo(_id, user) {
     }
 }
 
+/**
+ * Delete a user profile from the database.
+ * @async
+ * @function deleteProfileInfo
+ * @param {string} id - The ID of the user profile to delete.
+ * @returns {Promise<void>}
+ */
 export async function deleteProfileInfo(id) {
     try {
         console.log("Profile to delete: ", id);
@@ -92,6 +114,13 @@ export async function deleteProfileInfo(id) {
     }
 }
 
+/**
+ * Create a new user profile in the database.
+ * @async
+ * @function createNewProfile
+ * @param {Object} user - The new user object to create.
+ * @returns {Promise<void>}
+ */
 export async function createNewProfile(user) {
     try {
         const existingUser = await findUserByEmail(user.email);

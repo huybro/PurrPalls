@@ -1,6 +1,14 @@
 import jwt from 'jsonwebtoken';
 import { findUserByEmailAndPassword } from './db.js';
-// Function to check if email and password exist and match
+
+/**
+ * Check if the provided email and password exist and match in the database.
+ * @async
+ * @function checkCredentials
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ * @returns {Promise<Object|null>} Returns the user object if the credentials are valid, otherwise returns null.
+ */
 export async function checkCredentials(email, password) {
     if (!email || !password) {
         return null;
@@ -12,7 +20,14 @@ export async function checkCredentials(email, password) {
     return user;
 }
 
-// Function to generate a JWT token
+/**
+ * Generate a JSON Web Token (JWT) for the given user.
+ * @function generateToken
+ * @param {Object} user - The user object containing user data.
+ * @param {number} user.id - The user's ID.
+ * @param {string} user.email - The user's email address.
+ * @returns {string} The generated JWT token.
+ */
 export function generateToken(user) {
     const payload = {
         id: user.id,
@@ -30,7 +45,14 @@ export function generateToken(user) {
     return token;
 }
 
-// Middleware function to authenticate JWT token
+/**
+ * Middleware function to authenticate a JSON Web Token (JWT).
+ * @function authenticateToken
+ * @param {Object} req - The Express request object.
+ * @param {Object} res - The Express response object.
+ * @param {Function} next - The next middleware function in the chain.
+ * @returns {void}
+ */
 export function authenticateToken(req, res, next) {
     const token = req.headers.authorization
 

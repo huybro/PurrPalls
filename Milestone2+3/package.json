@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "milestone-02": "http-server src/client -p 3000 -c-1 -o -s",
-    "milestone-03": "node src/server/server.js",
+    "start": "node src/server/server.js",
     "test": "node src/client/script/script.js"
   },
   "dependencies": {
