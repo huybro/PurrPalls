@@ -1,4 +1,4 @@
-// import { saveUser } from "./db.js";
+import { saveUser } from "./db.js";
 
 const URL = "http://127.0.0.1:3000/";
 const loginButton = document.getElementById('login-button');

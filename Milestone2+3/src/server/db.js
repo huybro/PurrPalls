@@ -35,13 +35,34 @@ export async function findUserByEmailAndPassword(email, password) {
   }
 
 
-  export async function getAvailableProfiles() {
+export async function getAvailableProfiles() {
     try {
         const result = await dbUser.allDocs({ include_docs: true });
         const profiles = result.rows.map(row => row.doc);
         return profiles;
     } catch (error) {
         console.error("Error fetching profiles: ", error);
+        throw error;
+    }
+}
+
+export async function updateProfileInfo(id, ...user) {
+    try {
+        await dbUser.put({ _id: id, ...user });
+        console.log("Profile updated successfully");
+    } catch (error) {
+        console.error("Error updating profile: ", error);
+        throw error;
+    }
+}
+
+export async function deleteProfileInfo(id) {
+    try {
+        const profile = await dbUser.get(id);
+        await dbUser.remove(profile);
+        console.log("Profile deleted successfully");
+    } catch (error) {
+        console.error("Error deleting profile: ", error);
         throw error;
     }
 }

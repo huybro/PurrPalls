@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { authenticateToken, checkCredentials, generateToken } from './authentication.js';
 import {getAvailableProfiles} from './db.js'
+import { updateProfileInfo } from './db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -54,8 +55,29 @@ app.get('/signup', (req, res) => {
 });
 
 // Route handler for /profile
-app.get('/profile', (req, res) => {
+app.get('/setting', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'settings.html'));
+});
+
+// Route handler for updating profile information
+app.put('/setting', async (req, res) => {
+    // Extract the updated information from the request body
+    const { user } = req.body;
+
+    await updateProfileInfo(user.id, ...user);
+
+    // Send a success response
+    res.status(200).json({ message: 'Profile information updated successfully' });
+});
+
+app.delete('/deleteProfile', async (req, res) => {
+    // Extract the updated information from the request body
+    const { id } = req.body;
+
+    await deleteProfileInfo(id);
+
+    // Send a success response
+    res.status(200).json({ message: 'Delete User successfully' });
 });
 
 
