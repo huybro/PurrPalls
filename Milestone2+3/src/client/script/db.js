@@ -2,7 +2,7 @@ const db = new PouchDB('user');
 
 export async function saveUser(user){
      try{
-         await db.put({_id: user.getId(), ...user})
+         await db.put({_id: user._id, ...user})
          console.log("save user succesfully")
      }catch(e){
          console.log(e)
@@ -11,9 +11,10 @@ export async function saveUser(user){
 }
 
  export async function getUser(){
-        const user = await db.allDocs()
-        console.log(user)
-        console.log(user.rows)
+        const user = await db.allDocs({
+            include_docs: true,
+            attachments: true
+          })
         return user.rows[0].doc
  }
 

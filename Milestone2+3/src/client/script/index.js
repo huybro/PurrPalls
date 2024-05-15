@@ -1,9 +1,12 @@
-// import { getUser } from "./db.js";
+import { getUser } from "./db.js";
 import { Available } from "../utils/available.js";
 import { User } from "../utils/user.js";
 
-const user = JSON.parse(localStorage.getItem('user'));
-console.log("index dep trai",user);
+//const user = JSON.parse(localStorage.getItem('user'));
+//console.log("index dep trai",user);
+
+const user = await getUser();
+console.log(user);
 
 const res = await fetch("http://127.0.0.1:3000/index/data", {
   method: 'GET',
@@ -14,7 +17,6 @@ const res = await fetch("http://127.0.0.1:3000/index/data", {
 
 const availableProfiles = await res.json(); 
 
-console.log(availableProfiles);
 
 function renderProfileInfo(profileDataObject) {
   const profileData = new Available(
