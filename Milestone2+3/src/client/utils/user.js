@@ -1,6 +1,6 @@
 export class User{
     // User's attributes
-    constructor(id, email,password, name, age, gender , image, breed, last_likes, description, hobby, quote){
+    constructor(id, email,password, name, age, gender , image, breed){
         this.id = id
         this.email = email
         this.password = password
@@ -9,10 +9,6 @@ export class User{
         this.gender = gender
         this.image = image
         this.breed = breed
-        this.last_likes = last_likes
-        this.description = description
-        this.hobby = hobby
-        this.quote = quote
     }
 
     getId(){
