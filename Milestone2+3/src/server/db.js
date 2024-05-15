@@ -35,7 +35,7 @@ export async function findUserByEmailAndPassword(email, password) {
   }
 
 
-  export async function getAvailableProfiles(excludeId) {
+  export async function getAvailableProfiles() {
     try {
         const result = await dbUser.allDocs({ include_docs: true });
         const profiles = result.rows.map(row => row.doc);
