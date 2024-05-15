@@ -27,9 +27,6 @@ loginButton.addEventListener('click', async () => {
     fetch(URL + 'index', {  
         method: 'GET',
         headers: { Authorization: `${token}` } 
-    }).then(response => { 
-        if (response.status === 200) {
-            window.location.href = '/index';
-        }
-    }); 
+    }) 
+    
 });
