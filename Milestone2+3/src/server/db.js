@@ -17,22 +17,31 @@ users.forEach(async (user) => {
 });
 
 export async function findUserByEmailAndPassword(email, password) {
-    for (const id of availableId) {
-      try {
-        const user = await dbUser.get(id);
-        if (user.email === email && user.password === password) {
-          return user;
-        }
-      } catch (error) {
-        if (error.status === 404) {
-          continue;
-        } else {
-          throw error;
-        }
-      }
+    // for (const id of availableId) {
+    //   try {
+    //     const user = await dbUser.get(id);
+    //     if (user.email === email && user.password === password) {
+    //       return user;
+    //     }
+    //   } catch (error) {
+    //     if (error.status === 404) {
+    //       continue;
+    //     } else {
+    //       throw error;
+    //     }
+    //   }
+    // }
+    // return null;
+    try {
+        const result = await dbUser.allDocs({ include_docs: true });
+        const profiles = result.rows.map(row => row.doc);
+        const user = profiles.find(profile => profile.email === email && profile.password === password);
+        return user;
+    } catch (error) {
+        console.error("Error fetching profiles: ", error);
+        return null;
     }
-    return null;
-  }
+}
 
 
 export async function getAvailableProfiles() {
@@ -58,11 +67,26 @@ export async function updateProfileInfo(id, ...user) {
 
 export async function deleteProfileInfo(id) {
     try {
+        console.log("Profile to delete: ", id);
         const profile = await dbUser.get(id);
+        console.log("Profile to delete: ", profile);
         await dbUser.remove(profile);
         console.log("Profile deleted successfully");
     } catch (error) {
         console.error("Error deleting profile: ", error);
+        throw error;
+    }
+}
+
+export async function createNewProfile(user) {
+    try {
+        const existingUser = await findUserByEmailAndPassword(user.email, user.password);
+        if (!existingUser) {
+          await dbUser.put({ _id: user.email, ...user });
+        }
+        console.log("New profile created successfully");
+    } catch (error) {
+        console.error("Error creating profile: ", error);
         throw error;
     }
 }

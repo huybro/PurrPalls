@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { authenticateToken, checkCredentials, generateToken } from './authentication.js';
 import {getAvailableProfiles} from './db.js'
-import { updateProfileInfo } from './db.js';
+import { updateProfileInfo, deleteProfileInfo, createNewProfile } from './db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -49,6 +49,18 @@ app.post('/login', async (req, res) => {
     res.status(200).json({ user });
 });
 
+app.post('/signup', async (req, res) => {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Please enter email and password' });
+    }
+    await createNewProfile({ email, password });
+    res.sendFile(path.join(__dirname, '../client/pages', 'login.html'));
+});
+
+
+
+
 // Route handler for /signup
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/pages', 'signup.html'));
@@ -70,10 +82,10 @@ app.put('/setting', async (req, res) => {
     res.status(200).json({ message: 'Profile information updated successfully' });
 });
 
-app.delete('/deleteProfile', async (req, res) => {
+app.delete('/deleteProfile/:id', async (req, res) => {
     // Extract the updated information from the request body
-    const { id } = req.body;
-
+    const id = req.params.id;
+    console.log("id",id);
     await deleteProfileInfo(id);
 
     // Send a success response
