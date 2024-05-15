@@ -24,6 +24,7 @@ loginButton.addEventListener('click', async () => {
         alert('Invalid email or password');
         return;
     }
-    localStorage.setItem('user', JSON.stringify(user));
+    
+    await saveUser(user);
     window.location.href = '/index';
 });
