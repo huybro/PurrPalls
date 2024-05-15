@@ -34,16 +34,14 @@ export function generateToken(user) {
 export function authenticateToken(req, res, next) {
     const token = req.headers.authorization;
 
-    if (!token) {
-        return res.status(401).json({ message: 'No token provided' });
-    }
-
     jwt.verify(token, 'ilovecs326', (err, decoded) => {
+        console.log('Token:', token);
         if (err) {
+            console.log(err);
             return res.status(403).json({ message: 'Invalid token' });
         }
-
         // Store the decoded token in the request object for future use
+        console.log('Token verified successfully:', decoded);
         req.user = decoded;
         next();
     });
