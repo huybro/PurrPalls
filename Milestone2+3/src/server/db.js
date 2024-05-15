@@ -32,7 +32,6 @@ export async function findUserByEmailAndPassword(email, password) {
       }
     }
     return null;
-<<<<<<< HEAD
   }
 
 
@@ -46,6 +45,3 @@ export async function findUserByEmailAndPassword(email, password) {
         throw error;
     }
 }
-=======
-  }
->>>>>>> fafe69995bfc82c0a1e848fc5adf7dd0f0bb2c17
